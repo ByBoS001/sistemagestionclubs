@@ -1,5 +1,5 @@
 import firebase from '../firebase.js';
-import Product from '../models/userModel.js';
+import User from '../models/userModel.js';
 import {
   getFirestore,
   collection,
@@ -57,7 +57,7 @@ export const getUsers = async (req, res, next) => {
 
 export const getUser = async (req, res, next) => {
     try {
-      const id = req.params.idUser;
+      const id = req.params.iduser;
       const product = doc(db, 'user', id);
       const data = await getDoc(user);
       if (data.exists()) {
@@ -88,7 +88,7 @@ export const getUser = async (req, res, next) => {
 
 export const deleteUser = async (req, res, next) => {
     try {
-      const id = req.params.idUser;
+      const id = req.params.iduser;
       await deleteDoc(doc(db, 'user', id));
       res.status(200).send('user deleted successfully');
     } catch (error) {
