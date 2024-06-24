@@ -25,6 +25,7 @@ app.use('/api/user_role/:id', user_roleRoute);
 app.use('/api/updateUser_role/:id', user_roleRoute);
 app.use('/api/delateUser_role/:id', user_roleRoute);
 
+// resource 
 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
