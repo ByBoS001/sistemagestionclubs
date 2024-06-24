@@ -1,6 +1,6 @@
-class User {
-    constructor(idUser, name, email, cellphone, category_id_category, campus_idcampus) {
-      (this.idUser = idUser),
+class user {
+    constructor(iduser, name, email, cellphone, category_id_category, campus_idcampus) {
+      (this.iduser = iduser),
         (this.name = name),
         (this.email = email),
         (this.cellphone = cellphone),
@@ -9,7 +9,7 @@ class User {
     }
   }
 
-export default User;
+export default user;
 
 
 
