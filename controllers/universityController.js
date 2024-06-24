@@ -58,40 +58,40 @@ export const getUniversity = async (req, res, next) => {
 
 export const getUniversity = async (req, res, next) => {
   try {
-    const id = req.params.iduser_role;
-    const user_role = doc(db, 'user_role', id);
-    const data = await getDoc(user_role);
+    const id = req.params.iduniversity;
+    const university = doc(db, 'university', id);
+    const data = await getDoc(university);
     if (data.exists()) {
       res.status(200).send(data.data());
     } else {
-      res.status(404).send('user_role not found');
+      res.status(404).send('university not found');
     }
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
 
-//update User_role
+//update University
 
-export const updateUser_role = async (req, res, next) => {
+export const updateUniversity = async (req, res, next) => {
 try {
-  const id = req.params.iduser_role;
+  const id = req.params.iduniversity;
   const data = req.body;
-  const user_role = doc(db, 'user_role', id);
-  await updateDoc(user_role, data);
-  res.status(200).send('user_role updated successfully');
+  const university = doc(db, 'university', id);
+  await updateDoc(university, data);
+  res.status(200).send('university updated successfully');
 } catch (error) {
   res.status(400).send(error.message);
 }
 };
 
-//delete user_role
+//delete university
 
-export const deleteUser_role = async (req, res, next) => {
+export const deleteUniversity = async (req, res, next) => {
   try {
-    const id = req.params.iduser_role;
-    await deleteDoc(doc(db, 'user_role', id));
-    res.status(200).send('user_role deleted successfully');
+    const id = req.params.iduniversity;
+    await deleteDoc(doc(db, 'university', id));
+    res.status(200).send('university deleted successfully');
   } catch (error) {
     res.status(400).send(error.message);
   }
