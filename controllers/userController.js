@@ -41,7 +41,7 @@ export const getUsers = async (req, res, next) => {
             doc.data().email,
             doc.data().cellphone,
             doc.data().category_id_category,
-            doc.date().campus_idcampus
+            doc.date().campus_idcampus,
           );
           userArray.push(user);
         });
