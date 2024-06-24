@@ -58,7 +58,7 @@ export const getUsers = async (req, res, next) => {
 export const getUser = async (req, res, next) => {
     try {
       const id = req.params.iduser;
-      const product = doc(db, 'user', id);
+      const user = doc(db, 'user', id);
       const data = await getDoc(user);
       if (data.exists()) {
         res.status(200).send(data.data());
