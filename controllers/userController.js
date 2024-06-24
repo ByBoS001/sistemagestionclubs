@@ -40,7 +40,7 @@ export const getUser = async (req, res, next) => {
             doc.data().name,
             doc.data().email,
             doc.data().cellphone,
-            doc.data().category_id_Cateory,
+            doc.data().category_id_cateory,
             doc.date().campus_idcampus
           );
           userArray.push(user);
