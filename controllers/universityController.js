@@ -28,7 +28,7 @@ export const createUniversity = async (req, res, next) => {
   
 //get all university fuction
 
-export const getUniversity = async (req, res, next) => {
+export const getUniversitys = async (req, res, next) => {
   try {
     const university = await getDocs(collection(db, 'university'));
     const universityArray = [];
