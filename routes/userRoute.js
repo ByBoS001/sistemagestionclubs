@@ -10,9 +10,9 @@ import {
 
 const router = express.Router();
 
-router.post('/users', getUsers);
+router.get('/users', getUsers);
 router.post('/newUser', createUser);
-router.post('/user/:id', getUser);
+router.get('/user/:id', getUser);
 router.put('/updateUser/:id', updateUser);
 router.delete('/deleteUser/:id', deleteUser);
 
