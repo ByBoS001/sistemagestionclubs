@@ -1,5 +1,5 @@
 import firebase from '../firebase.js';
-import User from '../models/userModel.js';
+import user from '../models/userModel.js';
 import {
   getFirestore,
   collection,
@@ -74,7 +74,7 @@ export const getUser = async (req, res, next) => {
 
   export const updateUser = async (req, res, next) => {
   try {
-    const id = req.params.idUser;
+    const id = req.params.iduser;
     const data = req.body;
     const user = doc(db, 'user', id);
     await updateDoc(user, data);
