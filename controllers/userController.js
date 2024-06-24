@@ -11,7 +11,7 @@ import {
   deleteDoc,
 } from 'firebase/firestore';
 
-const db = getFirestore(firebase);
+const  db = getFirestore(firebase);
 
 //create User
 export const createUser = async (req, res, next) => {

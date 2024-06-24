@@ -11,7 +11,7 @@ app.use(express.json());
 
 //routes
 //user
-app.use('/api/users', userRoute);
+app.use('/api', userRoute);
 app.use('/api/newUser', userRoute);
 app.use('/api/user/:id', userRoute);
 app.use('/api/updateUser/:id', userRoute);
