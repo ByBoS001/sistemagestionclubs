@@ -18,7 +18,7 @@ export const createUser = async (req, res, next) => {
     try {
       const data = req.body;
       await addDoc(collection(db, 'user'), data);
-      res.status(200).send('product created successfully');
+      res.status(200).send('user created successfully');
     } catch (error) {
       res.status(400).send(error.message);
     }
@@ -32,15 +32,15 @@ export const getUsers = async (req, res, next) => {
       const userArray = [];
   
       if (user.empty) {
-        res.status(400).send('No Users found');
+        res.status(400).send('No User found');
       } else {
         user.forEach((doc) => {
           const user = new user(
-            doc.idUser,
+            doc.iduser,
             doc.data().name,
             doc.data().email,
             doc.data().cellphone,
-            doc.data().category_id_Cateory,
+            doc.data().category_id_category,
             doc.date().campus_idcampus
           );
           userArray.push(user);

@@ -10,9 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 //routes
-app.use('/api', userRoute);
-app.use('/api/newUser/:id', userRoute);
-app.use('/user/:id', userRoute);
+//user
+app.use('/api/users', userRoute);
+app.use('/api/newUser', userRoute);
+app.use('/api/user/:id', userRoute);
 app.use('/api/updateUser/:id', userRoute);
 app.use('/api/delateUser/:id', userRoute);
 
