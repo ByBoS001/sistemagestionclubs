@@ -4,4 +4,5 @@ class authentication_method {
         (this.guy = guy);  
     }
   }
+
   export default authentication_method;
