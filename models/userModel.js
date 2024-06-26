@@ -1,4 +1,4 @@
-class user {
+class User {
     constructor(iduser, name, email, cellphone, campus_idcampus, club_idclub, user_role_iduser_role) {
       (this.iduser = iduser),
         (this.name = name),
@@ -10,5 +10,5 @@ class user {
     }
   }
 
-export default user;
+export default User;
 

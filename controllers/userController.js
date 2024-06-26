@@ -1,5 +1,6 @@
 import firebase from '../firebase.js';
-import user from '../models/userModel.js';
+import User from '../models/userModel.js';
+
 import {
   getFirestore,
   collection,
@@ -28,14 +29,14 @@ export const createUser = async (req, res, next) => {
 
 export const getUsers = async (req, res, next) => {
     try {
-      const user = await getDocs(collection(db, 'user'));
+      const users = await getDocs(collection(db, 'user'));
       const userArray = [];
   
-      if (user.empty) {
+      if (users.empty) {
         res.status(400).send('No User found');
       } else {
-        user.forEach((doc) => {
-          const user = new user(
+        users.forEach((doc) => {
+          const user = new User(
             doc.iduser,
             doc.data().name,
             doc.data().email,

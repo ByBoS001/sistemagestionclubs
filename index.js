@@ -2,9 +2,10 @@ import express from 'express';
 import cors from 'cors';
 
 import config from './config.js';
+
 import userRoute from './routes/userRoute.js';
 import universityRoute  from './routes/universityRoute.js';
-import resourceRoute from './routes/resourceRoute.js'
+import resourceRoute from './routes/resourceRoute.js';
 const app = express();
 
 app.use(cors());
