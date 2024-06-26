@@ -6,6 +6,7 @@ import config from './config.js';
 import userRoute from './routes/userRoute.js';
 import universityRoute  from './routes/universityRoute.js';
 import resourceRoute from './routes/resourceRoute.js';
+import policyRoute from './routes/policyRoute.js';
 const app = express();
 
 app.use(cors());
@@ -32,7 +33,14 @@ app.use('/api/newResource', resourceRoute);
 app.use('/api/resource/:id', resourceRoute);
 app.use('/api/updateResource/:id', resourceRoute);
 app.use('/api/deleteResource/:id', resourceRoute);
- 
+
+// Policy
+app.use('/api', policyRoute);
+app.use('/api/newPolicy', policyRoute);
+app.use('/api/policy/:id', policyRoute);
+app.use('/api/updatePolicy/:id', policyRoute);
+app.use('/api/deletePolicy/:id', policyRoute);
+
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
 );
