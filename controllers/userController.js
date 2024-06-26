@@ -1,6 +1,5 @@
 import firebase from '../firebase.js';
 import User from '../models/userModel.js';
-
 import {
   getFirestore,
   collection,
@@ -12,9 +11,9 @@ import {
   deleteDoc,
 } from 'firebase/firestore';
 
-const  db = getFirestore(firebase);
+const db = getFirestore(firebase);
 
-//create User
+
 export const createUser = async (req, res, next) => {
     try {
       const data = req.body;
@@ -24,16 +23,15 @@ export const createUser = async (req, res, next) => {
       res.status(400).send(error.message);
     }
   };
+ 
 
-//get all user fuction
-
-export const getUsers = async (req, res, next) => {
+  export const getUsers = async (req, res, next) => {
     try {
       const users = await getDocs(collection(db, 'user'));
       const userArray = [];
   
       if (users.empty) {
-        res.status(400).send('No User found');
+        res.status(400).send('No Users found');
       } else {
         users.forEach((doc) => {
           const user = new User(
@@ -41,9 +39,9 @@ export const getUsers = async (req, res, next) => {
             doc.data().name,
             doc.data().email,
             doc.data().cellphone,
-            doc.data().campus_idcampus,
             doc.data().club_idclub,
-            doc.date().user_role_iduser_role,
+            doc.data().campus_idcampus,
+            doc.data().user_role_iduser_role,
           );
           userArray.push(user);
         });
@@ -55,28 +53,26 @@ export const getUsers = async (req, res, next) => {
     }
   };
 
-//get user by id
 
 export const getUser = async (req, res, next) => {
-    try {
-      const id = req.params.iduser;
-      const user = doc(db, 'user', id);
-      const data = await getDoc(user);
-      if (data.exists()) {
-        res.status(200).send(data.data());
-      } else {
-        res.status(404).send('user not found');
-      }
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  };
-
-//update User
-
-  export const updateUser = async (req, res, next) => {
   try {
-    const id = req.params.iduser;
+    const id = req.params.id;
+    const user = doc(db, 'user', id);
+    const data = await getDoc(user);
+    if (data.exists()) {
+      res.status(200).send(data.data());
+    } else {
+      res.status(404).send('user not found');
+    }
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};  
+
+
+export const updateUser = async (req, res, next) => {
+  try {
+    const id = req.params.id;
     const data = req.body;
     const user = doc(db, 'user', id);
     await updateDoc(user, data);
@@ -86,14 +82,13 @@ export const getUser = async (req, res, next) => {
   }
 };
 
-//delete user
 
 export const deleteUser = async (req, res, next) => {
-    try {
-      const id = req.params.iduser;
-      await deleteDoc(doc(db, 'user', id));
-      res.status(200).send('user deleted successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  };
+  try {
+    const id = req.params.id;
+    await deleteDoc(doc(db, 'user', id));
+    res.status(200).send('user deleted successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
