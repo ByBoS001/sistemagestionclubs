@@ -31,7 +31,7 @@ app.use('/api/newResource', resourceRoute);
 app.use('/api/resource/:id', resourceRoute);
 app.use('/api/updateResource/:id', resourceRoute);
 app.use('/api/delateResource/:id', resourceRoute);
-
+ 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
 );

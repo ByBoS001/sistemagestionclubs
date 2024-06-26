@@ -1,8 +1,7 @@
 class career_has_user {
-    constructor(career_idcareer, user_iduser, user_sede_idsede) {
+    constructor(career_idcareer, user_iduser) {
       (this.career_idcareer = career_idcareer),
-        (this.user_iduser = user_iduser),
-        (this.user_sede_idsede = user_sede_idsede);
+        (this.user_iduser = user_iduser);
     }
   }
   
