@@ -1,4 +1,4 @@
-class resource {
+class Resource {
     constructor(idresource, name, description, amount) {
       (this.idresource = idresource),
         (this.name = name),
@@ -7,4 +7,4 @@ class resource {
     }
   }
   
-export default resource;
+export default Resource;
