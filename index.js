@@ -4,6 +4,7 @@ import cors from 'cors';
 import config from './config.js';
 import userRoute from './routes/userRoute.js';
 import universityRoute  from './routes/universityRoute.js';
+import resourceRoute from './routes/resourceRoute.js'
 const app = express();
 
 app.use(cors());
@@ -24,6 +25,12 @@ app.use('/api/university/:id', universityRoute);
 app.use('/api/updateUniversity/:id', universityRoute);
 app.use('/api/delateUniversity/:id', universityRoute);
 
+// Resource
+app.use('/api', resourceRoute);
+app.use('/api/newResource', resourceRoute);
+app.use('/api/resource/:id', resourceRoute);
+app.use('/api/updateResource/:id', resourceRoute);
+app.use('/api/delateResource/:id', resourceRoute);
 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
