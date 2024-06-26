@@ -1,4 +1,4 @@
-class club {
+class Club {
     constructor(idclub, name, description, category_id_category, policy_idpolicy, resource_idresource) {
       (this.idclub = idclub),
         (this.name = name),
@@ -9,4 +9,4 @@ class club {
     }
   }
   
-export default club;
+export default Club;
