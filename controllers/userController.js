@@ -41,7 +41,8 @@ export const getUsers = async (req, res, next) => {
             doc.data().email,
             doc.data().cellphone,
             doc.data().campus_idcampus,
-            doc.date().iduser_role,
+            doc.data().club_idclub,
+            doc.date().user_role_iduser_role,
           );
           userArray.push(user);
         });
