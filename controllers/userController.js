@@ -13,6 +13,7 @@ import {
 
 const db = getFirestore(firebase);
 
+//create user
 
 export const createUser = async (req, res, next) => {
     try {
@@ -24,6 +25,7 @@ export const createUser = async (req, res, next) => {
     }
   };
  
+//get all user fuction
 
   export const getUsers = async (req, res, next) => {
     try {
@@ -53,6 +55,8 @@ export const createUser = async (req, res, next) => {
     }
   };
 
+  //get user by id
+
 
 export const getUser = async (req, res, next) => {
   try {
@@ -69,6 +73,8 @@ export const getUser = async (req, res, next) => {
   }
 };  
 
+//update user
+
 
 export const updateUser = async (req, res, next) => {
   try {
@@ -82,6 +88,7 @@ export const updateUser = async (req, res, next) => {
   }
 };
 
+//delete user
 
 export const deleteUser = async (req, res, next) => {
   try {
