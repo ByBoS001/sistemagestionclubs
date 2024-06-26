@@ -1,4 +1,4 @@
-class university {
+class University {
     constructor(iduniversity, name, description, vision, mision) {
       (this.iduniversity = iduniversity),
         (this.name = name),
@@ -8,4 +8,4 @@ class university {
     }
   }
   
-export default university;
+export default University;
