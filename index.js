@@ -9,6 +9,7 @@ import resourceRoute from './routes/resourceRoute.js';
 import policyRoute from './routes/policyRoute.js';
 import clubRoute from './routes/clubRoute.js';
 import club_activityRoute from './routes/club_activityRoute.js';
+import categoryRoute from './routes/categoryRoute.js';
 const app = express();
 
 app.use(cors());
@@ -56,6 +57,13 @@ app.use('/api/newClub_activity', club_activityRoute);
 app.use('/api/club_activity/:id', club_activityRoute);
 app.use('/api/updateClub_activity/:id', club_activityRoute);
 app.use('/api/deleteClub_activity/:id', club_activityRoute);
+
+// Category
+app.use('/api', categoryRoute);
+app.use('/api/newCategory', categoryRoute);
+app.use('/api/category/:id', categoryRoute);
+app.use('/api/updateCategory/:id', categoryRoute);
+app.use('/api/deleteCategory/:id', categoryRoute);
 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),

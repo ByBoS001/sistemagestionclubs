@@ -1,4 +1,4 @@
-class category {
+class Category {
     constructor(id_category, name, description, category_id_category) {
       (this.id_category = id_category),
         (this.name = name),
@@ -7,4 +7,4 @@ class category {
     }
   }
   
-export default category;
+export default Category;
