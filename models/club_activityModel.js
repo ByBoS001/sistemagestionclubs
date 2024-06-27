@@ -1,4 +1,4 @@
-class club_activity {
+class Club_activity {
     constructor(idclub_activity, name, description, start_date, end_date, club_idclub) {
       (this.idclub_activity = idclub_activity),
         (this.name = name),
@@ -9,4 +9,4 @@ class club_activity {
     }
   }
   
-export default club_activity;
+export default Club_activity;
