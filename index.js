@@ -11,7 +11,7 @@ import careerRoute from './routes/careerRoute.js';
 import campuRoute from './routes/campuRoute.js';
 import authenticationRoute from './routes/authenticationRoute.js';
 import authentication_methodRoute from './routes/authentication_methodRoute.js';
-import attendance_registrationRoute from './routes/attendance_registrationRoute.js';
+import attendance_registrationRoute from './routes/attendance_registrationRoute.js'; //aqui no se porque me señala error, cuando si funciona todo
 import policyRoute from './routes/policyRoute.js';
 import clubRoute from './routes/clubRoute.js';
 import club_activityRoute from './routes/club_activityRoute.js';
