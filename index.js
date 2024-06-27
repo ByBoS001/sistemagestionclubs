@@ -9,6 +9,7 @@ import resourceRoute from './routes/resourceRoute.js';
 import user_roleRoute from './routes/user_roleRoute.js';
 import careerRoute from './routes/careerRoute.js';
 import campuRoute from './routes/campuRoute.js';
+import authenticationRoute from './routes/authenticationRoute.js';
 const app = express();
 
 app.use(cors());
@@ -57,6 +58,13 @@ app.use('/api/newCampu', campuRoute);
 app.use('/api/campu/:id', campuRoute);
 app.use('/api/updateCampu/:id', campuRoute);
 app.use('/api/deleteCampu/:id', campuRoute);
+
+// Campu
+app.use('/api', authenticationRoute);
+app.use('/api/newAuthentication', authenticationRoute);
+app.use('/api/authentication/:id', authenticationRoute);
+app.use('/api/updateAuthentication/:id', authenticationRoute);
+app.use('/api/deleteAuthentication/:id', authenticationRoute);
 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
