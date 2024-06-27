@@ -40,9 +40,9 @@ export const createClub = async (req, res, next) => {
             doc.idclub,
             doc.data().name,
             doc.data().description,
-            doc.data().category_id_category,
-            doc.data().policy_idpolicy,
-            doc.data().resource_idresource,
+            doc.data().idcategory,
+            doc.data().idpolicy,
+            doc.data().idresource,
           );
           clubArray.push(club);
         });

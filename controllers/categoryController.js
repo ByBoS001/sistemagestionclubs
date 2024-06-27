@@ -37,10 +37,10 @@ export const createCategory = async (req, res, next) => {
       } else {
         categorys.forEach((doc) => {
           const category = new  Category(
-            doc.id_category,
+            doc.idcategory,
             doc.data().name,
             doc.data().description,
-            doc.data().category_id_category,
+            doc.data().category_idcategory,
           );
           categoryArray.push(category);
         });

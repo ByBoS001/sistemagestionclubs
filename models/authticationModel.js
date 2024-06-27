@@ -1,10 +1,10 @@
-class authentication {
-    constructor(idauthentication, authentication_method_idauthentication_method, user_ideuser) {
+class Authentication {
+    constructor(idauthentication, idauthentication_method, iduser) {
       (this.idauthentication = idauthentication),
-        (this.authentication_method_idauthentication_method = authentication_method_idauthentication_method),
-        (this.user_ideuser = user_ideuser); 
+        (this.idauthentication_method = idauthentication_method),
+        (this.iduser = iduser); 
     }
   }
 
-export default authentication;
+export default Authentication;
 

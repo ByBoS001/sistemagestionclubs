@@ -42,7 +42,7 @@ export const createClub_activity = async (req, res, next) => {
             doc.data().description,
             doc.data().start_date,
             doc.data().end_date,
-            doc.data().club_idclub,
+            doc.data().idclub,
           );
           club_activityArray.push(club_activity);
         });

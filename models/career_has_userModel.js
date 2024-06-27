@@ -1,8 +1,8 @@
-class career_has_user {
-    constructor(career_idcareer, user_iduser) {
-      (this.career_idcareer = career_idcareer),
-        (this.user_iduser = user_iduser);
+class Career_has_user {
+    constructor(idcareer, iduser) {
+      (this.idcareer = idcareer),
+        (this.iduser = iduser);
     }
   }
   
-export default career_has_user;
+export default Career_has_user;
