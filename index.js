@@ -6,7 +6,9 @@ import config from './config.js';
 import userRoute from './routes/userRoute.js';
 import universityRoute  from './routes/universityRoute.js';
 import resourceRoute from './routes/resourceRoute.js';
-import user_roleRoute from './routes/user_roleRoute'
+import user_roleRoute from './routes/user_roleRoute.js';
+import careerRoute from './routes/careerRoute.js';
+import campuRoute from './routes/campuRoute.js';
 const app = express();
 
 app.use(cors());
@@ -42,6 +44,20 @@ app.use('/api/resource/:id', resourceRoute);
 app.use('/api/updateResource/:id', resourceRoute);
 app.use('/api/deleteResource/:id', resourceRoute);
  
+// Career
+app.use('/api', careerRoute);
+app.use('/api/newCareer', careerRoute);
+app.use('/api/career/:id', careerRoute);
+app.use('/api/updateCareer/:id', careerRoute);
+app.use('/api/deleteCareer/:id', careerRoute);
+
+// Campu
+app.use('/api', campuRoute);
+app.use('/api/newCampu', campuRoute);
+app.use('/api/campu/:id', campuRoute);
+app.use('/api/updateCampu/:id', campuRoute);
+app.use('/api/deleteCampu/:id', campuRoute);
+
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
 );
