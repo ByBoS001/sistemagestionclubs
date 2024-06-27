@@ -1,4 +1,4 @@
-class career {
+class Career {
     constructor(idcareer, name, description) {
       (this.idcareer = idcareer),
         (this.name = name),
@@ -6,4 +6,4 @@ class career {
     }
   }
   
-export default career;
+export default Career;

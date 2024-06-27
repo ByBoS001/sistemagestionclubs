@@ -39,7 +39,7 @@ export const createUser = async (req, res, next) => {
 
   export const getUsers = async (req, res, next) => {
     try {
-      const users = await getDocs(collection(db, 'user'));
+      const users = await getDocs(collection(db, 'users'));
       const userArray = [];
   
       if (users.empty) {

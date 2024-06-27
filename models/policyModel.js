@@ -1,4 +1,4 @@
-class policy {
+class Policy {
     constructor(idpolicy, description, mandatory) {
       (this.idpolicy = idpolicy),
         (this.description = description),
@@ -6,4 +6,4 @@ class policy {
     }
   }
   
-export default policy;
+export default Policy;

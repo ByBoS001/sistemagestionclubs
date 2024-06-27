@@ -1,9 +1,9 @@
-class campus {
-    constructor(idcampus, name_campus, university_iduniversity ) {
+class Campus {
+    constructor(idcampus, name_campus, iduniversity ) {
       (this.idcampus = idcampus),
         (this.name_campus = name_campus),
-        (this.university_iduniversity = university_iduniversity);
+        (this.iduniversity = iduniversity);
     }
   }
   
-export default campus;
+export default Campus;
