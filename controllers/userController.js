@@ -43,7 +43,7 @@ export const createUser = async (req, res, next) => {
             doc.data().cellphone,
             doc.data().club_idclub,
             doc.data().campus_idcampus,
-            doc.data().user_role_iduser_role,
+            doc.data().iduser_role,
           );
           userArray.push(user);
         });

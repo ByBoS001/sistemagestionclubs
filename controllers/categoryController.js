@@ -40,7 +40,7 @@ export const createCategory = async (req, res, next) => {
             doc.idcategory,
             doc.data().name,
             doc.data().description,
-            doc.data().category_idcategory,
+            doc.data().idcategory,
           );
           categoryArray.push(category);
         });

@@ -10,6 +10,7 @@ import policyRoute from './routes/policyRoute.js';
 import clubRoute from './routes/clubRoute.js';
 import club_activityRoute from './routes/club_activityRoute.js';
 import categoryRoute from './routes/categoryRoute.js';
+import careerRoute from './routes/careerRoute.js';
 const app = express();
 
 app.use(cors());
@@ -64,6 +65,13 @@ app.use('/api/newCategory', categoryRoute);
 app.use('/api/category/:id', categoryRoute);
 app.use('/api/updateCategory/:id', categoryRoute);
 app.use('/api/deleteCategory/:id', categoryRoute);
+
+// Career
+app.use('/api', careerRoute);
+app.use('/api/newCareer', careerRoute);
+app.use('/api/career/:id', careerRoute);
+app.use('/api/updateCareer/:id', careerRoute);
+app.use('/api/deleteCareer/:id', careerRoute);
 
 app.listen(config.port, () =>
   console.log(`Server is live @ ${config.hostUrl}`),
