@@ -6,6 +6,7 @@ import config from './config.js';
 import userRoute from './routes/userRoute.js';
 import universityRoute  from './routes/universityRoute.js';
 import resourceRoute from './routes/resourceRoute.js';
+import user_roleRoute from './routes/user_roleRoute'
 const app = express();
 
 app.use(cors());
@@ -25,6 +26,14 @@ app.use('/api/newUniversity', universityRoute);
 app.use('/api/university/:id', universityRoute);
 app.use('/api/updateUniversity/:id', universityRoute);
 app.use('/api/deleteUniversity/:id', universityRoute);
+
+//user role
+
+app.use('/api', user_roleRoute);
+app.use('/api/newUserRole', user_roleRoute);
+app.use('/api/userRole/:id', user_roleRoute);
+app.use('/api/updateUserRole/:id', user_roleRoute);
+app.use('/api/deleteUserRole/:id', user_roleRoute);
 
 // Resource
 app.use('/api', resourceRoute);
