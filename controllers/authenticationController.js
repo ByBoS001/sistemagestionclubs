@@ -16,15 +16,18 @@ const db = getFirestore(firebase);
 //create authentication
 
 export const createAuthentication = async (req, res, next) => {
-    try {
-      const data = req.body;
-      await addDoc(collection(db, 'authentication'), data);
-      res.status(200).send('authentication created successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
+  try {
+    const data = req.body;
+    const typeAuthentication = {
+    fk_typeuthentication_method: doc(db, "authentication", data.idauthentication_method),
+    fk_typeuser: doc(db, "authentication", data.iduser)
     }
-  };
- 
+    await addDoc(collection(db, 'authentication'), typeAuthentication);
+    res.status(200).send('authentication created successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
 //get all authentication fuction
 
   export const getAuthentications = async (req, res, next) => {

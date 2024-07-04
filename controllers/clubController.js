@@ -16,15 +16,21 @@ const db = getFirestore(firebase);
 //create club
 
 export const createClub = async (req, res, next) => {
-    try {
-      const data = req.body;
-      await addDoc(collection(db, 'club'), data);
-      res.status(200).send('club created successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
+  try {
+    const data = req.body;
+    const typeClub = {
+    name:data.name,
+    description:data.description,
+    fk_typecategory: doc(db, "club", data.idcategory),
+    fk_typepolicy: doc(db, "club", data.idpolicy),
+    fk_typeresource: doc(db, "club", data.idresource)
     }
-  };
- 
+    await addDoc(collection(db, 'club'), typeClub);
+    res.status(200).send('club created successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
 //get all club fuction
 
   export const getClubs = async (req, res, next) => {

@@ -25,6 +25,24 @@ export const createCategory = async (req, res, next) => {
     }
   };
  
+// Create sub-category
+
+export const createSubCategory = async (req, res, next) => {
+  try {
+    const data = req.body;
+    const subCategory = {
+      name: data.name,
+      description: data.description,
+      reference: doc(db, "category", data.idcategory)
+    }
+    // category/3YDFw7wuKgdHQJoU4aOT
+    await addDoc(collection(db, 'category', data.idcategory, "sub-category"), subCategory);
+    res.status(200).send('Category created successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 //get all category fuction
 
   export const getCategorys = async (req, res, next) => {

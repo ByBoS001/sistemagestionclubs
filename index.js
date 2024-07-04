@@ -11,7 +11,7 @@ import careerRoute from './routes/careerRoute.js';
 import campuRoute from './routes/campuRoute.js';
 import authenticationRoute from './routes/authenticationRoute.js';
 import authentication_methodRoute from './routes/authentication_methodRoute.js';
-import attendance_registrationRoute from './routes/attendance_registrationRoute.js'; //aqui no se porque me señala error, cuando si funciona todo
+import attendance_registrationRoute from './routes/attendance_registrationRoute.js'; 
 import policyRoute from './routes/policyRoute.js';
 import clubRoute from './routes/clubRoute.js';
 import club_activityRoute from './routes/club_activityRoute.js';
@@ -38,7 +38,6 @@ app.use('/api/updateUniversity/:id', universityRoute);
 app.use('/api/deleteUniversity/:id', universityRoute);
 
 //user role
-
 app.use('/api', user_roleRoute);
 app.use('/api/newUserRole', user_roleRoute);
 app.use('/api/userRole/:id', user_roleRoute);
@@ -108,13 +107,16 @@ app.use('/api/club_activity/:id', club_activityRoute);
 app.use('/api/updateClub_activity/:id', club_activityRoute);
 app.use('/api/deleteClub_activity/:id', club_activityRoute);
 
-// Club 
+// Category 
 app.use('/api', categoryRoute);
 app.use('/api/newCategory', categoryRoute);
 app.use('/api/category/:id', categoryRoute);
 app.use('/api/updateCategory/:id', categoryRoute);
 app.use('/api/deleteCategory/:id', categoryRoute);
+app.use('/api/new_sub_category', categoryRoute);
+
 app.listen(config.port, () =>
+
   console.log(`Server is live @ ${config.hostUrl}`),
 );
 

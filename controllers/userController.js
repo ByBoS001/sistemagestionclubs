@@ -1,12 +1,10 @@
 import firebase from '../firebase.js';
 import User from '../models/userModel.js';
-import iduser_role from '../models/user_roleModel.js'
 import {
   getFirestore,
   collection,
   doc,
   addDoc,
-  setDoc,
   getDoc,
   getDocs,
   updateDoc,
@@ -16,25 +14,24 @@ import {
 const db = getFirestore(firebase);
 
 //create user
-
 export const createUser = async (req, res, next) => {
   try {
     const data = req.body;
-    if (!data.iduser_role) {
-      throw new Error("Missing iduser_role in request body");
+    const typeUser = {
+    name:data.name,
+    email:data.email,
+    cellphone:data.cellphone,
+    fk_typeuser_rol: doc(db, "user_role", data.iduser_role),
+    fk_typeclub: doc(db, "user_role", data.idclub),
+    fk_typecampus: doc(db, "user_role", data.idcampus)
     }
-    const idUserRoleRef = doc(db, 'user_role', data.iduser_role);
-    const userRef = await addDoc(collection(db, 'user'), {
-      ...data,
-      user_role: {
-        ref: idUserRoleRef
-      }
-    });
-    res.status(200).send('User created successfully');
+    await addDoc(collection(db, 'user'), typeUser);
+    res.status(200).send('user created successfully');
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
+
 //get all user fuction
 
   export const getUsers = async (req, res, next) => {
@@ -51,8 +48,8 @@ export const createUser = async (req, res, next) => {
             doc.data().name,
             doc.data().email,
             doc.data().cellphone,
-            doc.data().club_idclub,
-            doc.data().campus_idcampus,
+            doc.data().idclub,
+            doc.data().idcampus,
             doc.data().iduser_role,
           );
           userArray.push(user);

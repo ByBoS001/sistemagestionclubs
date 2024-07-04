@@ -16,14 +16,19 @@ const db = getFirestore(firebase);
 //create attendance registration
 
 export const createAttendance_registration = async (req, res, next) => {
-    try {
-      const data = req.body;
-      await addDoc(collection(db, 'attendance registration'), data);
-      res.status(200).send('attendance registration created successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
+  try {
+    const data = req.body;
+    const typeAttendance_registration = {
+    attendance:data.attendance,
+    fk_typeuser: doc(db, "Attendance registration", data.iduser),
+    fk_typeclub_activity: doc(db, "Attendance registration", data.idclub_activity)
     }
-  };
+    await addDoc(collection(db, 'Attendance registration'), typeAttendance_registration);
+    res.status(200).send('Attendance registration created successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
  
 //get all attendance registration fuction
 

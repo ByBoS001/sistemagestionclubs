@@ -16,15 +16,19 @@ const db = getFirestore(firebase);
 //create campus
 
 export const createCampu = async (req, res, next) => {
-    try {
-      const data = req.body;
-      await addDoc(collection(db, 'campu'), data);
-      res.status(200).send('campu created successfully');
-    } catch (error) {
-      res.status(400).send(error.message);
+  try {
+    const data = req.body;
+    const typeCampu = {
+    name_campu:data.name_campu,
+    fk_typeuniversity: doc(db, "campu", data.iduniversity)
     }
-  };
- 
+    await addDoc(collection(db, 'campu'), typeCampu);
+    res.status(200).send('campu created successfully');
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+};
+
 //get all Campu fuction
 
   export const getCampus = async (req, res, next) => {
